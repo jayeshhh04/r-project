@@ -1,0 +1,27 @@
+1. > library(readxl)
+   > playstoredata <- read_excel ("C:/Users/Jayesh Patidar/Downloads/playstoredata.xlsx")
+   > View(playstoredata)
+2. str(playstoredata)
+3. summary(playstoredata)
+4. head(playstoredata)
+5. tail(playstoredata)
+6. min_rating <- min(playstoredata$Rating)
+   max_rating <- max(playstoredata$Rating)
+   print (paste ("Minimum Rating:", min_rating))
+   print (paste ("Maximum Rating:", max_rating))
+7. print (paste ("Minimum:", min_installs))
+   print (paste ("Maximum:", max_installs))
+8. Playstoredata$Installs <- gsub (“[^0-9]”, “”playstoredata$Installs
+   Cat (“Average Rating:”, average_rating, “\n”)
+9. high_rated_apps <- playstoredata[playstoredata$Rating > 4.5 &playstoredata$installs >10000, ]
+   cat("Number of high-rated high-install apps:", nrow(high_rated_apps), "\n")
+10.ad_supported_apps <- playstoredata [playstoredata$`Ad Supported` == TRUE, ]
+   n_ad_supported <- nrow(ad_supported_apps)
+   cat ("Number of Ad-Supported Apps:", n_ad_supported, "\n")
+11.ggplot (playstoredata, aes (x = Rating)) +geom_histogram (bins = 10) +
+   labs (title = "Distribution of App Ratings", x = "Rating", y = "Frequency") +
+   theme_bw ()
+12.ggplot (playstoredata, aes (x = Rating, y = Installs))+geom_point () +
+   labs (title = "Rating vs. Installation", x = "Rating", y = "Installation") +
+   theme_bw ()
+13.boxplot (Rating ~ Category, data = playstoredata,col='blue')
